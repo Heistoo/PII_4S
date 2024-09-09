@@ -45,8 +45,15 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
               ),
               const SizedBox(height: 25),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size.fromHeight(50),
+                  backgroundColor: Theme.of(context).colorScheme.primary,
+                ),
                 onPressed: () {},
-                child: Text(register == true ? 'Register' : "Login"),
+                child: Text(register == true ? 'Register' : "Login",
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  color: Colors.white,),
+                ),
               ),
               const SizedBox(height: 20),
               InkWell(

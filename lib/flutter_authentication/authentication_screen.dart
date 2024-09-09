@@ -21,39 +21,45 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
     return Scaffold(
       body: Form(
         key: _formKey,
-        child: Column(
-          children: [
-            const Wave(),
-            AuthenticationTextFormField(
-              icon: Icons.email,
-              label: 'Email',
-              textEditingController: emailHandler,
-            ),
-            AuthenticationTextFormField(
-              icon: Icons.vpn_key,
-              label: 'Password',
-              textEditingController: passwordHandler,
-            ),
-            if (register == true)
-            AuthenticationTextFormField(
-              icon: Icons.password,
-              label: 'Confirm your password',
-              textEditingController: passwordConfirmationHandler,
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text(register == true ? 'Register' : "Login"),
-            ),
-            InkWell(
-              onTap: () {
-                setState(() => register = !register);
-                _formKey.currentState?.reset();
-              },
-              child: Text(
-                register == true ? 'Login here' : 'Register here',
-                ),
-            )
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25),
+          child: Column(
+            children: [
+              // const SizedBox(height: 50),
+              const Wave(),
+              AuthenticationTextFormField(
+                icon: Icons.email,
+                label: 'Email',
+                textEditingController: emailHandler,
+              ),
+              AuthenticationTextFormField(
+                icon: Icons.vpn_key,
+                label: 'Password',
+                textEditingController: passwordHandler,
+              ),
+              if (register == true)
+              AuthenticationTextFormField(
+                icon: Icons.password,
+                label: 'Confirm your password',
+                textEditingController: passwordConfirmationHandler,
+              ),
+              const SizedBox(height: 25),
+              ElevatedButton(
+                onPressed: () {},
+                child: Text(register == true ? 'Register' : "Login"),
+              ),
+              const SizedBox(height: 20),
+              InkWell(
+                onTap: () {
+                  setState(() => register = !register);
+                  _formKey.currentState?.reset();
+                },
+                child: Text(
+                  register == true ? 'Login here' : 'Register here',
+                  ),
+              )
+            ],
+          ),
         ),
       ),
     );

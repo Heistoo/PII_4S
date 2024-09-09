@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pii_4s/flutter_authentication/authentication_text_field.dart';
+import 'package:pii_4s/style/wave.dart';
 
 class AuthenticationScreen extends StatefulWidget {
   const AuthenticationScreen({super.key});
@@ -22,7 +23,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
         key: _formKey,
         child: Column(
           children: [
-            const SizedBox(height: 50),
+            const Wave(),
             AuthenticationTextFormField(
               icon: Icons.email,
               label: 'Email',

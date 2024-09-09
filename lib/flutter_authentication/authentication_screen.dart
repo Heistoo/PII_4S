@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pii_4s/flutter_authentication/authentication_text_field.dart';
 
 class AuthenticationScreen extends StatefulWidget {
   const AuthenticationScreen({super.key});
@@ -8,35 +9,48 @@ class AuthenticationScreen extends StatefulWidget {
 }
 
 class _AuthenticationScreenState extends State<AuthenticationScreen> {
+  final GlobalKey<FormState> _formKey = GlobalKey();
   final emailHandler = TextEditingController();
+  final passwordHandler = TextEditingController();
+  final passwordConfirmationHandler = TextEditingController();
+  bool register = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Form(
+        key: _formKey,
         child: Column(
           children: [
             const SizedBox(height: 50),
-            TextFormField(
-              controller: emailHandler,
-              decoration: InputDecoration(
-                floatingLabelStyle: Theme.of(context).textTheme.titleLarge,
-                icon: Icon(
-                  Icons.email,
-                  color: Theme.of(context).primaryColor
-                ),
-                labelText: "Email:",
-              ),
+            AuthenticationTextFormField(
+              icon: Icons.email,
+              label: 'Email',
+              textEditingController: emailHandler,
             ),
-            TextFormField(),
-            TextFormField(),
+            AuthenticationTextFormField(
+              icon: Icons.vpn_key,
+              label: 'Password',
+              textEditingController: passwordHandler,
+            ),
+            if (register == true)
+            AuthenticationTextFormField(
+              icon: Icons.password,
+              label: 'Confirm your password',
+              textEditingController: passwordConfirmationHandler,
+            ),
             ElevatedButton(
               onPressed: () {},
-              child: const Text('Register'),
+              child: Text(register == true ? 'Register' : "Login"),
             ),
             InkWell(
-              onTap: () {},
-              child: const Text('Login'),
+              onTap: () {
+                setState(() => register = !register);
+                _formKey.currentState?.reset();
+              },
+              child: Text(
+                register == true ? 'Login here' : 'Register here',
+                ),
             )
           ],
         ),

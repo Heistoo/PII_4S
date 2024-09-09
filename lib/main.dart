@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pii_4s/flutter_authentication/authentication_screen.dart';
-import 'package:pii_4s/flutter_authentication/authentication_text_field.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {

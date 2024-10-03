@@ -49,7 +49,9 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                   minimumSize: const Size.fromHeight(50),
                   backgroundColor: Theme.of(context).colorScheme.primary,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/registrar');
+                },
                 child: Text(register == true ? 'Register' : "Login",
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   color: Colors.white,),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pii_4s/flutter_authentication/authentication_screen.dart';
+import 'package:pii_4s/flutter_gear_registration/gear_registration.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -13,6 +14,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const AuthenticationScreen(),
+      routes: {
+        '/registrar': (context) => RegistrarEquipamentoScreen(), // Rota para a tela de registrar
+      },
     );
   }
 }

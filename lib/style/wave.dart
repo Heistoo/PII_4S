@@ -7,7 +7,7 @@ class Wave extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipPath(
       clipper: WaveClipper(),
-      child: Container(color: Theme.of(context).primaryColor, height: 200),
+      child: Container(color: Color.fromRGBO(0, 20, 137, 1), height: 200),
     );
   }
 }

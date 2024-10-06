@@ -18,10 +18,10 @@ class AuthenticationTextFormField extends StatelessWidget {
     
     return TextFormField(
       controller: textEditingController,
-      obscureText: label.toLowerCase().contains('password'),
+      obscureText: label.toLowerCase().contains('Senha'),
       decoration: InputDecoration(
         floatingLabelStyle: theme.textTheme.titleLarge,
-        icon: Icon(icon, color: theme.colorScheme.primary),
+        icon: Icon(icon, color: Color.fromRGBO(0, 20, 137, 1)),
         labelText: label,
       ),
     );

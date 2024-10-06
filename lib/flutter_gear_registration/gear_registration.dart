@@ -28,7 +28,8 @@ class _RegistrarEquipamentoScreenState extends State<RegistrarEquipamentoScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Registrar Equipamento de Incêndio'),
+        title: const Text('Registrar Equipamento de Incêndio', style: TextStyle(color: Colors.white),),
+        backgroundColor: Color.fromRGBO(0, 20, 137, 1),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

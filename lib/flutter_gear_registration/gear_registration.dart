@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class RegistrarEquipamentoScreen extends StatefulWidget {
+  const RegistrarEquipamentoScreen({super.key});
+
   @override
   _RegistrarEquipamentoScreenState createState() => _RegistrarEquipamentoScreenState();
 }
@@ -26,7 +28,7 @@ class _RegistrarEquipamentoScreenState extends State<RegistrarEquipamentoScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Registrar Equipamento de Incêndio'),
+        title: const Text('Registrar Equipamento de Incêndio'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -46,15 +48,15 @@ class _RegistrarEquipamentoScreenState extends State<RegistrarEquipamentoScreen>
               _buildTextField(predioController, 'Prédio'),
               _buildTextField(validadeController, 'Validade', keyboardType: TextInputType.datetime),
               _buildTextField(statusController, 'Status'),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     // Lógica para registrar o equipamento
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Equipamento registrado com sucesso!')));
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Equipamento registrado com sucesso!')));
                   }
                 },
-                child: Text('Registrar'),
+                child: const Text('Registrar'),
               ),
             ],
           ),
@@ -70,7 +72,7 @@ class _RegistrarEquipamentoScreenState extends State<RegistrarEquipamentoScreen>
         controller: controller,
         keyboardType: keyboardType,
         decoration: InputDecoration(
-          border: OutlineInputBorder(),
+          border: const OutlineInputBorder(),
           labelText: labelText,
         ),
         validator: (value) {

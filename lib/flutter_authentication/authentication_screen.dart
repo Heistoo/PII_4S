@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pii_4s/flutter_authentication/authentication_text_field.dart';
 import 'package:pii_4s/style/wave.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class AuthenticationScreen extends StatefulWidget {
   const AuthenticationScreen({super.key});
@@ -15,6 +17,55 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
   final passwordHandler = TextEditingController();
   final passwordConfirmationHandler = TextEditingController();
   bool register = true;
+
+  Future<void> _register() async {
+    final url = Uri.parse('http://localhost:5000/register'); // substitua pela URL do seu backend
+    final response = await http.post(
+      url,
+      headers: {"Content-Type": "application/json"},
+      body: jsonEncode({
+        'email': emailHandler.text,
+        'password': passwordHandler.text,
+      }),
+    );
+
+    if (response.statusCode == 201) {
+      final data = jsonDecode(response.body);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(data['message'])),
+      );
+      // Redirecionar ou limpar o formulário após o registro
+      _formKey.currentState?.reset();
+    } else {
+      final data = jsonDecode(response.body);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(data['message'])),
+      );
+    }
+  }
+
+  Future<void> _login() async {
+    final url = Uri.parse('http://localhost:5000/login'); // substitua pela URL do seu backend
+    final response = await http.post(
+      url,
+      headers: {"Content-Type": "application/json"},
+      body: jsonEncode({
+        'email': emailHandler.text,
+        'password': passwordHandler.text,
+      }),
+    );
+
+    if (response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(data['message'])),
+      );
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Login falhou')),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +109,11 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                 ),
                 onPressed: () {
                   Navigator.pushNamed(context, '/registrar');
+                  if (register) {
+                    _register(); // Chama a função de registro
+                  } else {
+                    _login(); // Chama a função de login
+                  }
                 },
                 child: Text(register == true ? 'Cadastre-se' : "Login",
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(

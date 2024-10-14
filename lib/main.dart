@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pii_4s/flutter_authentication/authentication_screen.dart';
-import 'package:pii_4s/flutter_gear_registration/gear_registration.dart';
-void main() => runApp(const MyApp());
+import 'src/screens/login_screen.dart';
+
+void main() {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -10,13 +12,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.cyan),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromRGBO(0, 20, 137, 100)),
         useMaterial3: true,
       ),
-      home: const AuthenticationScreen(),
-      routes: {
-        '/registrar': (context) => RegistrarEquipamentoScreen(), // Rota para a tela de registrar
-      },
+      home: const LoginScreen(),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
+import './equipment_registration.dart';
 
 const users =  {
   'dribbble@gmail.com': '12345',
@@ -61,6 +62,11 @@ Widget build(BuildContext context) {
             logo: const AssetImage('assets/imagens/Metro-SP_logo.png'),
             onLogin: _authUser,
             onSignup: _signupUser,
+            onSubmitAnimationCompleted: (){
+              Navigator.of(context).pushReplacement(MaterialPageRoute(
+                builder: (context) => const RegistrarEquipamentoScreen(),
+              ));
+            },
             onRecoverPassword: _recoverPassword,
           ),
         ),

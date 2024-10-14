@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
+import './main_hub.dart';
 import './equipment_registration.dart';
 
 const users =  {
@@ -65,7 +66,7 @@ Widget build(BuildContext context) {
             onSubmitAnimationCompleted: (){
               Navigator.of(context).pushReplacement(MaterialPageRoute(
                 // envio da tela de login para a tela de registro do equipamento, ainda falta fazer a tela principal do programa
-                builder: (context) => const RegistrarEquipamentoScreen(),
+                builder: (context) => const MainHub(),
               ));
             },
             onRecoverPassword: _recoverPassword,

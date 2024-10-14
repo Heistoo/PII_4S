@@ -3,6 +3,7 @@ import 'package:flutter_login/flutter_login.dart';
 import './main_hub.dart';
 import './equipment_registration.dart';
 
+// apenas para teste de usuários, use para ir à tela principal
 const users =  {
   'dribbble@gmail.com': '12345',
   'hunter@gmail.com': 'hunter',

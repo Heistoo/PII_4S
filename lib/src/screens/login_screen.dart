@@ -15,10 +15,10 @@ class LoginScreen extends StatelessWidget {
     debugPrint('Name: ${data.name}, Password: ${data.password}');
     return Future.delayed(loginTime).then((_) {
       if (!users.containsKey(data.name)) {
-        return 'User not exists';
+        return 'Usuario não existe';
       }
       if (users[data.name] != data.password) {
-        return 'Password does not match';
+        return 'Senha incorreta';
       }
       return null;
     });
@@ -35,7 +35,7 @@ class LoginScreen extends StatelessWidget {
     debugPrint('Name: $name');
     return Future.delayed(loginTime).then((_) {
       if (!users.containsKey(name)) {
-        return 'User not exists';
+        return 'Usuário não existe';
       }
       return '';
     });

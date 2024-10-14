@@ -1,22 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 
-// ajuste da parte de cima 
-class TopRoundedClipper extends CustomClipper<Path> {
+class CustomClipperTop extends CustomClipper<Path>{
   @override
-  Path getClip(Size size) {
-    var path = Path();
-    path.lineTo(0, size.height - 50);
-    var controlPoint = Offset(size.width / 2, size.height);
-    var endPoint = Offset(size.width, size.height - 50);
-    path.quadraticBezierTo(controlPoint.dx, controlPoint.dy, endPoint.dx, endPoint.dy);
-    path.lineTo(size.width, 0);
+  Path getClip(Size size){
+    double w = size.width;
+    double h = size.height;
+    final path = Path();
+    path.lineTo(0, h);
+    path.quadraticBezierTo(
+      w * 0.5,
+      h - 100,
+      w,
+      h
+      );
+    path.lineTo(w, 0);
     path.close();
     return path;
   }
-
   @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
+  bool shouldReclip(CustomClipper<Path> oldClipper) {
+    return false;
+  }
 }
+
 
 class CustomElevatedButton extends StatelessWidget {
   final String text;
@@ -56,7 +63,7 @@ class MainHub extends StatelessWidget {
       body: Column(
             children: [
               ClipPath(
-                clipper: TopRoundedClipper(),
+                clipper: CustomClipperTop(),
                 child: Container(
                   height: 150, // Altura da área superior
                   color: const Color.fromRGBO(0, 20, 137, 1), // Azul escuro

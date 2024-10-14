@@ -64,6 +64,7 @@ Widget build(BuildContext context) {
             onSignup: _signupUser,
             onSubmitAnimationCompleted: (){
               Navigator.of(context).pushReplacement(MaterialPageRoute(
+                // envio da tela de login para a tela de registro do equipamento, ainda falta fazer a tela principal do programa
                 builder: (context) => const RegistrarEquipamentoScreen(),
               ));
             },

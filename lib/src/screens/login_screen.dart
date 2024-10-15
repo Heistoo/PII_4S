@@ -57,9 +57,11 @@ Widget build(BuildContext context) {
         // FlutterLogin widget
         Expanded(
           child: FlutterLogin(
+            userType: LoginUserType.email,
             messages: LoginMessages(
               forgotPasswordButton: 'Esqueci a senha',
               signupButton: 'Registrar',
+              
               recoverPasswordIntro: 'Recuperar senha',
               recoverPasswordDescription: 'Iremos enviar um email com informações para recuperar a senha',
               recoverPasswordButton: 'Recuperar',

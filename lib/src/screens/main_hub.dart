@@ -9,7 +9,7 @@ class CustomClipperTop extends CustomClipper<Path>{
     path.lineTo(0, h);
     path.quadraticBezierTo(
       w * 0.5,
-      h - 100,
+      h - 150,
       w,
       h
       );
@@ -39,8 +39,8 @@ class CustomElevatedButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        backgroundColor: const Color.fromRGBO(0, 20, 137, 1), // Azul escuro
-        minimumSize: Size(double.infinity, 50), // Largura total
+        backgroundColor: const Color.fromRGBO(0, 20, 137, 1), 
+        minimumSize: Size(double.infinity, 50), 
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
@@ -64,8 +64,8 @@ class MainHub extends StatelessWidget {
               ClipPath(
                 clipper: CustomClipperTop(),
                 child: Container(
-                  height: 150, // Altura da área superior
-                  color: const Color.fromRGBO(0, 20, 137, 1), // Azul escuro
+                  height: 150,
+                  color: const Color.fromRGBO(0, 20, 137, 1),
                 ),
               ),
               Container(
@@ -74,14 +74,14 @@ class MainHub extends StatelessWidget {
                       padding: const EdgeInsets.all(16.0),
                       child: Image.asset(
                         'assets/imagens/Metro-SP_logo.png',
-                        width: 200, // Tamanho do logotipo
+                        width: 200,
                       ),
                     ),
                   ),
               ),
               Expanded(
                 child: Container(
-                  color: Colors.white, // Fundo da parte inferior da tela
+                  color: Colors.white,
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Column(
@@ -90,12 +90,12 @@ class MainHub extends StatelessWidget {
                           text: 'Gerenciar Equipamento',
                           onPressed: () {},
                         ),
-                        SizedBox(height: 16), // Espaçamento entre os botões
+                        SizedBox(height: 16),
                         CustomElevatedButton(
                           text: 'Relatórios',
                           onPressed: () {},
                         ),
-                        SizedBox(height: 16), // Espaçamento entre os botões
+                        SizedBox(height: 16),
                         CustomElevatedButton(
                           text: 'Sobre',
                           onPressed: () {},
@@ -110,4 +110,3 @@ class MainHub extends StatelessWidget {
     );
   }
 }
-

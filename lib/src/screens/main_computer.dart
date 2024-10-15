@@ -53,8 +53,8 @@ class CustomElevatedButton extends StatelessWidget {
   }
 }
 
-class MainHub extends StatelessWidget {
-  const MainHub({super.key});
+class MainComp extends StatelessWidget {
+  const MainComp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +81,8 @@ class MainHub extends StatelessWidget {
               ),
               Expanded(
                 child: Container(
-                  color: Colors.white, // Fundo da parte inferior da tela
+                  constraints: BoxConstraints(maxWidth: 800),
+                  color: const Color.fromARGB(0, 255, 255, 255), // Fundo da parte inferior da tela
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Column(
@@ -110,4 +111,3 @@ class MainHub extends StatelessWidget {
     );
   }
 }
-

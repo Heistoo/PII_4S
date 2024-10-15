@@ -57,6 +57,14 @@ Widget build(BuildContext context) {
         // FlutterLogin widget
         Expanded(
           child: FlutterLogin(
+            messages: LoginMessages(
+              forgotPasswordButton: 'Esqueci a senha',
+              signupButton: 'Registrar',
+              recoverPasswordIntro: 'Recuperar senha',
+              recoverPasswordDescription: 'Iremos enviar um email com informações para recuperar a senha',
+              recoverPasswordButton: 'Recuperar',
+              goBackButton: 'Voltar',
+            ),
             theme: LoginTheme(
               pageColorLight: Colors.white,
               pageColorDark: Colors.white,

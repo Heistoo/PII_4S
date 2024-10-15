@@ -66,6 +66,7 @@ Widget build(BuildContext context) {
               recoverPasswordDescription: 'Iremos enviar um email com informações para recuperar a senha',
               recoverPasswordButton: 'Recuperar',
               goBackButton: 'Voltar',
+              confirmSignupSuccess: 'Registro feito com sucesso!',
             ),
             theme: LoginTheme(
               pageColorLight: Colors.white,

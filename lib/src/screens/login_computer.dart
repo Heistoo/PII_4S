@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
-import './main_hub.dart';
+import './main_computer.dart';
 import './equipment_registration.dart';
 
 // apenas para teste de usuários, use para ir à tela principal
@@ -9,8 +9,8 @@ const users =  {
   'hunter@gmail.com': 'hunter',
 };
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class LoginComputer extends StatelessWidget {
+  const LoginComputer({super.key});
 
   Duration get loginTime => const Duration(milliseconds: 2250);
 
@@ -57,17 +57,6 @@ Widget build(BuildContext context) {
         // FlutterLogin widget
         Expanded(
           child: FlutterLogin(
-            userType: LoginUserType.email,
-            messages: LoginMessages(
-              forgotPasswordButton: 'Esqueci a senha',
-              signupButton: 'Registrar',
-              
-              recoverPasswordIntro: 'Recuperar senha',
-              recoverPasswordDescription: 'Iremos enviar um email com informações para recuperar a senha',
-              recoverPasswordButton: 'Recuperar',
-              goBackButton: 'Voltar',
-              confirmSignupSuccess: 'Registro feito com sucesso!',
-            ),
             theme: LoginTheme(
               pageColorLight: Colors.white,
               pageColorDark: Colors.white,
@@ -78,7 +67,7 @@ Widget build(BuildContext context) {
             onSubmitAnimationCompleted: (){
               Navigator.of(context).pushReplacement(MaterialPageRoute(
                 // envio da tela de login para a tela de registro do equipamento
-                builder: (context) => const MainHub(),
+                builder: (context) => const MainComp(),
               ));
             },
             onRecoverPassword: _recoverPassword,

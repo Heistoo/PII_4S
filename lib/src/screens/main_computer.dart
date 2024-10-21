@@ -10,7 +10,7 @@ class CustomClipperTop extends CustomClipper<Path>{
     path.lineTo(0, h);
     path.quadraticBezierTo(
       w * 0.5,
-      h - 150,
+      h - 100,
       w,
       h
       );
@@ -39,8 +39,8 @@ class CustomElevatedButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        backgroundColor: const Color.fromRGBO(0, 20, 137, 1), 
-        minimumSize: Size(double.infinity, 50), 
+        backgroundColor: const Color.fromRGBO(0, 20, 137, 1), // Azul escuro
+        minimumSize: Size(double.infinity, 50), // Largura total
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
@@ -53,8 +53,8 @@ class CustomElevatedButton extends StatelessWidget {
   }
 }
 
-class MainHub extends StatelessWidget {
-  const MainHub({super.key});
+class MainComp extends StatelessWidget {
+  const MainComp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -64,8 +64,8 @@ class MainHub extends StatelessWidget {
               ClipPath(
                 clipper: CustomClipperTop(),
                 child: Container(
-                  height: 150,
-                  color: const Color.fromRGBO(0, 20, 137, 1),
+                  height: 150, // Altura da área superior
+                  color: const Color.fromRGBO(0, 20, 137, 1), // Azul escuro
                 ),
               ),
               Container(
@@ -74,30 +74,29 @@ class MainHub extends StatelessWidget {
                       padding: const EdgeInsets.all(16.0),
                       child: Image.asset(
                         'assets/imagens/Metro-SP_logo.png',
-                        width: 200,
+                        width: 200, // Tamanho do logotipo
                       ),
                     ),
                   ),
               ),
               Expanded(
                 child: Container(
-                  color: Colors.white,
+                  constraints: BoxConstraints(maxWidth: 800),
+                  color: const Color.fromARGB(0, 255, 255, 255), // Fundo da parte inferior da tela
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Column(
                       children: [
                         CustomElevatedButton(
                           text: 'Gerenciar Equipamento',
-                          onPressed: () {
-                            Navigator.pushNamed(context, '/equipment_hub');
-                          },
+                          onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => const RegistrarEquipamentoScreen()));},
                         ),
-                        SizedBox(height: 16),
+                        SizedBox(height: 16), // Espaçamento entre os botões
                         CustomElevatedButton(
                           text: 'Relatórios',
                           onPressed: () {},
                         ),
-                        SizedBox(height: 16),
+                        SizedBox(height: 16), // Espaçamento entre os botões
                         CustomElevatedButton(
                           text: 'Sobre',
                           onPressed: () {},

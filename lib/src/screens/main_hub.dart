@@ -88,7 +88,9 @@ class MainHub extends StatelessWidget {
                       children: [
                         CustomElevatedButton(
                           text: 'Gerenciar Equipamento',
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/equipment_hub');
+                          },
                         ),
                         SizedBox(height: 16), // Espaçamento entre os botões
                         CustomElevatedButton(

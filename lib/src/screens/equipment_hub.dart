@@ -41,7 +41,7 @@ class EquipamentosPage extends StatelessWidget {
             crossAxisCount: crossAxisCount, 
             crossAxisSpacing: 10.0,
             mainAxisSpacing: 10.0,
-            childAspectRatio: 1.0, 
+            childAspectRatio: 0.8, 
           ),
           itemCount: equipamentos.length,
           itemBuilder: (context, index) {
@@ -66,7 +66,7 @@ class EquipamentosPage extends StatelessWidget {
                     Text('Última Manut: 10/2023'),
                     Spacer(), 
                     OverflowBar(
-                      alignment: MainAxisAlignment.spaceEvenly,
+                      alignment: MainAxisAlignment.center,
                       children: [
                         ElevatedButton(
                           onPressed: () {

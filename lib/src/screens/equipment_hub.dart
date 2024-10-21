@@ -27,7 +27,9 @@ class EquipamentosPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('METRÔ'),
+        title: Image.asset(
+          'assets/imagens/Metro-SP_logo.png'
+        ),
       ),
       body: ListView.builder(
         itemCount: equipamentos.length,
@@ -41,7 +43,7 @@ class EquipamentosPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Image.asset(
-                        'assets/extintor.png', // Imagem do extintor
+                        'assets/extintor.png',
                         height: 50,
                       ),
                       Column(
@@ -59,7 +61,7 @@ class EquipamentosPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  ButtonBar(
+                  OverflowBar(
                     alignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       ElevatedButton(

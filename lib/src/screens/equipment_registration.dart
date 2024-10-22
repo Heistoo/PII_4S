@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'equipment_hub.dart';
 
 class RegistrarEquipamentoScreen extends StatefulWidget {
   const RegistrarEquipamentoScreen({super.key});
@@ -29,7 +30,7 @@ class _RegistrarEquipamentoScreenState extends State<RegistrarEquipamentoScreen>
     return Scaffold(
       appBar: AppBar(
         title: const Text('Registrar Equipamento de Incêndio', style: TextStyle(color: Colors.white),),
-        backgroundColor: Color.fromRGBO(0, 20, 137, 1),
+        backgroundColor: const Color.fromRGBO(0, 20, 137, 1),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

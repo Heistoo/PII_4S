@@ -1,28 +1,7 @@
 import 'package:flutter/material.dart';
 import 'equipment_registration.dart';
 
-class CustomClipperTop extends CustomClipper<Path>{
-  @override
-  Path getClip(Size size){
-    double w = size.width;
-    double h = size.height;
-    final path = Path();
-    path.lineTo(0, h);
-    path.quadraticBezierTo(
-      w * 0.5,
-      h - 100,
-      w,
-      h
-      );
-    path.lineTo(w, 0);
-    path.close();
-    return path;
-  }
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) {
-    return false;
-  }
-}
+
 
 class CustomElevatedButton extends StatelessWidget {
   final String text;
@@ -39,7 +18,7 @@ class CustomElevatedButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        backgroundColor: const Color.fromRGBO(0, 20, 137, 1), // Azul escuro
+        backgroundColor: Color.fromARGB(255, 137, 0, 107), // Azul escuro
         minimumSize: Size(double.infinity, 50), // Largura total
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
@@ -62,7 +41,6 @@ class MainComp extends StatelessWidget {
       body: Column(
             children: [
               ClipPath(
-                clipper: CustomClipperTop(),
                 child: Container(
                   height: 150, // Altura da área superior
                   color: const Color.fromRGBO(0, 20, 137, 1), // Azul escuro

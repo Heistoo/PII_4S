@@ -5,6 +5,7 @@ import 'package:flutter_login/flutter_login.dart';
 const users = {
   'dribbble@gmail.com': '12345',
   'hunter@gmail.com': 'hunter',
+  '12345@gmail.com' :  '12345',
 };
 //estado para gerenciamento de autenticações (pode ser utilizado na tela de login do computador!)
 class AuthNotifier extends StateNotifier<String?> {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'equipment_registration.dart';
 
 class EquipmentHub extends StatelessWidget {
   @override
@@ -76,7 +77,7 @@ class EquipamentosPage extends StatelessWidget {
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            // Ação ao clicar em "Editar Equip"
+                            Navigator.pushNamed(context, "/equipment_registration");
                           },
                           child: Text('Editar Equip'),
                         ),

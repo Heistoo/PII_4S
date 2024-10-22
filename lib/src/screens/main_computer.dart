@@ -18,7 +18,7 @@ class CustomElevatedButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        backgroundColor: Color.fromARGB(255, 137, 0, 107), // Azul escuro
+        backgroundColor: Color.fromRGBO(0, 20, 137, 1), // Azul escuro
         minimumSize: Size(double.infinity, 50), // Largura total
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
@@ -40,20 +40,13 @@ class MainComp extends StatelessWidget {
     return Scaffold(
       body: Column(
             children: [
-              ClipPath(
-                child: Container(
-                  height: 150, // Altura da área superior
-                  color: const Color.fromRGBO(0, 20, 137, 1), // Azul escuro
-                ),
+              AppBar(
+                title: Image.asset('assets/imagens/Metro-SP_logo.png')
               ),
               Container(
                 child: Center(
                     child: Padding(
                       padding: const EdgeInsets.all(16.0),
-                      child: Image.asset(
-                        'assets/imagens/Metro-SP_logo.png',
-                        width: 200, // Tamanho do logotipo
-                      ),
                     ),
                   ),
               ),
